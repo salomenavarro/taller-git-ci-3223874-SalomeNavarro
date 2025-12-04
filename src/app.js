@@ -1,22 +1,21 @@
-function suma(a, b) {
-  return a + b;
-}
-
 function agregarItem(texto) {
-  if (!texto?.toString().trim()) return false;
+  const value = texto?.toString().trim();
+
+  // Validación UI
+  if (!value) {
+    if (typeof alert !== "undefined") {
+      alert("Texto vacío");
+    }
+    return false;
+  }
+
+  // DOM seguro
   const lista = globalThis.document?.getElementById?.("lista");
-  // Cuando se abra en navegador, el DOM existe; acá añadimos la lógica normal:
   if (lista) {
     const li = document.createElement("li");
-    li.textContent = texto.trim();
+    li.textContent = value;
     lista.appendChild(li);
   }
+
   return true;
 }
-
-// Solo para Node (tests)
-if (typeof module !== "undefined") {
-  module.exports = { suma, agregarItem };
-}
-
-console.log("App lista");
