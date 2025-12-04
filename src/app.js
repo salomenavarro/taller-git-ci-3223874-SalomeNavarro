@@ -20,3 +20,13 @@ if (typeof module !== "undefined") {
 }
 
 console.log("App lista");
+
+if (typeof document !== "undefined") {
+  const btn = document.getElementById("btn");
+  const input = document.getElementById("input");
+
+  btn?.addEventListener("click", () => {
+    agregarItem(input?.value);
+  });
+}
+
