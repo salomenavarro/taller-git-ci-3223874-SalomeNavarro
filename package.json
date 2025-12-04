@@ -1,0 +1,11 @@
+{
+  "name": "taller-git-ci-3223874-salomenavarro",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/app.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
